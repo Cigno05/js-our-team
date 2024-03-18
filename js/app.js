@@ -5,93 +5,52 @@ console.log('JS funziona');
 const teamMembers = [];
 
 const memberCeo = memberGenerator('Wayne Barnett', 'Founder & CEO', 'wayne-barnett-founder-ceo.jpg');
-console.log('Name ', memberCeo.name, 'Job ', memberCeo.job, 'String img ', memberCeo.img);
+// console.log('Name ', memberCeo.name, 'Job ', memberCeo.job, 'String img ', memberCeo.img);
 
 const memberChief = memberGenerator('Angela Caroll', 'Chief Editor', 'angela-caroll-chief-editor.jpg');
-console.log('Name ', memberChief.name, 'Job ', memberChief.job, 'String img ', memberChief.img);
+// console.log('Name ', memberChief.name, 'Job ', memberChief.job, 'String img ', memberChief.img);
 
 const memberOffice = memberGenerator('Walter Gordon', 'Office Manager', 'walter-gordon-office-manager.jpg');
-console.log('Name ', memberOffice.name, 'Job ', memberOffice.job, 'String img ', memberOffice.img);
+// console.log('Name ', memberOffice.name, 'Job ', memberOffice.job, 'String img ', memberOffice.img);
 
 const memberSocial = memberGenerator('Angela Lopez', 'Social Media Manager', 'angela-lopez-social-media-manager.jpg');
-console.log('Name ', memberSocial.name, 'Job ', memberSocial.job, 'String img ', memberSocial.img);
+// console.log('Name ', memberSocial.name, 'Job ', memberSocial.job, 'String img ', memberSocial.img);
 
 const memberDeveloper = memberGenerator('Scott Estrada', 'Developer', 'scott-estrada-developer.jpg');
-console.log('Name ', memberDeveloper.name, 'Job ', memberDeveloper.job, 'String img ', memberDeveloper.img);
+// console.log('Name ', memberDeveloper.name, 'Job ', memberDeveloper.job, 'String img ', memberDeveloper.img);
 
 const memberDesigner = memberGenerator('Barbara Ramos', 'Graphic Designer', 'barbara-ramos-graphic-designer.jpg');
-console.log('Name ', memberDesigner.name, 'Job ', memberDesigner.job, 'String img ', memberDesigner.img);
+// console.log('Name ', memberDesigner.name, 'Job ', memberDesigner.job, 'String img ', memberDesigner.img);
 
 teamMembers.push(memberCeo, memberChief, memberOffice, memberSocial, memberDeveloper, memberDesigner)
-console.log(teamMembers)
+// console.log(teamMembers)
 
-// richiamare gli id delle card
+let cardContainer = document.getElementById('card-container')
 
-const cardCeo = document.getElementById('ceo')
-cardCeo.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberCeo.img}" class="card-img-top" alt="foto di ${memberCeo.name}">
-    </div>      
-    <div class="card-body">
-    <h3 class="card-name">${memberCeo.name}</h3>
-    <h5 class="card-job">${memberCeo.job}</h5>
+cardContainer.innerHTML += '';
+
+for (let index = 0; index < teamMembers.length; index++) {
+
+
+    const colElement = document.createElement('div');
+    colElement.classList.add('col', 'col-12', 'col-md-6', 'col-lg-4', 'mt-4');
+    colElement.innerHTML = `
+    <div class="card">
+        <div class="member-img">
+            <img src="./img/${teamMembers[index].img}" class="card-img-top" alt="foto di ${teamMembers[index].name}">
+        </div>      
+        <div class="card-body">
+            <h3 class="card-name">${teamMembers[index].name}</h3>
+            <h5 class="card-job">${teamMembers[index].job}</h5>
+        </div>
     </div>
     `;
 
-const cardChief = document.getElementById('chief')
-cardChief.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberChief.img}" class="card-img-top" alt="foto di ${memberChief.name}">
-    </div>     
-    <div class="card-body">
-    <h3 class="card-name">${memberChief.name}</h3>
-    <h5 class="card-job">${memberChief.job}</h5>
-    </div>
-    `;
+    cardContainer.append(colElement)
+ }
 
-const cardOffice = document.getElementById('office')
-cardOffice.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberOffice.img}" class="card-img-top" alt="foto di ${memberOffice.name}">
-    </div>      
-    <div class="card-body">
-    <h3 class="card-name">${memberOffice.name}</h3>
-    <h5 class="card-job">${memberOffice.job}</h5>
-    </div>
-    `;
 
-const cardSocial = document.getElementById('social')
-cardSocial.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberSocial.img}" class="card-img-top" alt="foto di ${memberSocial.name}">
-    </div>      
-    <div class="card-body">
-    <h3 class="card-name">${memberSocial.name}</h3>
-    <h5 class="card-job">${memberSocial.job}</h5>
-    </div>
-    `;
 
-const cardDeveloper = document.getElementById('developer')
-cardDeveloper.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberDeveloper.img}" class="card-img-top" alt="foto di ${memberDeveloper.name}">
-    </div>      
-    <div class="card-body">
-    <h3 class="card-name">${memberDeveloper.name}</h3>
-    <h5 class="card-job">${memberDeveloper.job}</h5>
-    </div>
-    `;
-
-const cardDesigner = document.getElementById('designer')
-cardDesigner.innerHTML = `
-    <div class="member-img">
-    <img src="./img/${memberDesigner.img}" class="card-img-top" alt="foto di ${memberDesigner.name}">
-    </div>      
-    <div class="card-body">
-    <h3 class="card-name">${memberDesigner.name}</h3>
-    <h5 class="card-job">${memberDesigner.job}</h5>
-    </div>
-    `;
 
 
 
@@ -101,10 +60,11 @@ function memberGenerator(memberName, memberJob, memberIMG) {
         name: memberName,
         job: memberJob,
         img: memberIMG,
-
     }
+
     return member
 }
+
 
 
 
