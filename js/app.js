@@ -29,8 +29,9 @@ console.log(teamMembers)
 
 const cardCeo = document.getElementById('ceo')
 cardCeo.innerHTML = `
+    <div class="member-img">
     <img src="./img/${memberCeo.img}" class="card-img-top" alt="foto di ${memberCeo.name}">
-          
+    </div>      
     <div class="card-body">
     <h3 class="card-name">${memberCeo.name}</h3>
     <h5 class="card-job">${memberCeo.job}</h5>
@@ -39,8 +40,9 @@ cardCeo.innerHTML = `
 
 const cardChief = document.getElementById('chief')
 cardChief.innerHTML = `
+    <div class="member-img">
     <img src="./img/${memberChief.img}" class="card-img-top" alt="foto di ${memberChief.name}">
-          
+    </div>     
     <div class="card-body">
     <h3 class="card-name">${memberChief.name}</h3>
     <h5 class="card-job">${memberChief.job}</h5>
@@ -49,28 +51,31 @@ cardChief.innerHTML = `
 
 const cardOffice = document.getElementById('office')
 cardOffice.innerHTML = `
-        <img src="./img/${memberOffice.img}" class="card-img-top" alt="foto di ${memberOffice.name}">
-              
-        <div class="card-body">
-        <h3 class="card-name">${memberOffice.name}</h3>
-        <h5 class="card-job">${memberOffice.job}</h5>
-        </div>
-        `;
+    <div class="member-img">
+    <img src="./img/${memberOffice.img}" class="card-img-top" alt="foto di ${memberOffice.name}">
+    </div>      
+    <div class="card-body">
+    <h3 class="card-name">${memberOffice.name}</h3>
+    <h5 class="card-job">${memberOffice.job}</h5>
+    </div>
+    `;
 
 const cardSocial = document.getElementById('social')
 cardSocial.innerHTML = `
-            <img src="./img/${memberSocial.img}" class="card-img-top" alt="foto di ${memberSocial.name}">
-                  
-            <div class="card-body">
-            <h3 class="card-name">${memberSocial.name}</h3>
-            <h5 class="card-job">${memberSocial.job}</h5>
-            </div>
-            `;
+    <div class="member-img">
+    <img src="./img/${memberSocial.img}" class="card-img-top" alt="foto di ${memberSocial.name}">
+    </div>      
+    <div class="card-body">
+    <h3 class="card-name">${memberSocial.name}</h3>
+    <h5 class="card-job">${memberSocial.job}</h5>
+    </div>
+    `;
 
 const cardDeveloper = document.getElementById('developer')
 cardDeveloper.innerHTML = `
+    <div class="member-img">
     <img src="./img/${memberDeveloper.img}" class="card-img-top" alt="foto di ${memberDeveloper.name}">
-          
+    </div>      
     <div class="card-body">
     <h3 class="card-name">${memberDeveloper.name}</h3>
     <h5 class="card-job">${memberDeveloper.job}</h5>
@@ -79,8 +84,9 @@ cardDeveloper.innerHTML = `
 
 const cardDesigner = document.getElementById('designer')
 cardDesigner.innerHTML = `
+    <div class="member-img">
     <img src="./img/${memberDesigner.img}" class="card-img-top" alt="foto di ${memberDesigner.name}">
-          
+    </div>      
     <div class="card-body">
     <h3 class="card-name">${memberDesigner.name}</h3>
     <h5 class="card-job">${memberDesigner.job}</h5>
